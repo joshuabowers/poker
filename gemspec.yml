@@ -1,0 +1,14 @@
+name: poker
+summary: "TODO: Summary"
+description: "TODO: Description"
+license: MIT
+authors: Joshua Bowers
+email: joshua.bowers@gmail.com
+homepage: https://rubygems.org/gems/poker
+
+development_dependencies:
+  bundler: ~> 1.0
+  rake: ~> 0.8
+  rspec: ~> 2.4
+  rubygems-tasks: ~> 0.2
+  yard: ~> 0.8
