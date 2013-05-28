@@ -27,6 +27,10 @@ module Poker
       @cards.pop.tap {|c| @dealt << c}
     end
     
+    def empty?
+      @cards.empty?
+    end
+    
     def inspect
       "Deck: #{@dealt.count} / #{@cards.count} (dealt / remain)"
     end
