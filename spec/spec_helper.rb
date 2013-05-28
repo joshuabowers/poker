@@ -1,4 +1,4 @@
 require 'rspec'
-require 'poker/version'
+require 'poker'
 
 include Poker

@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'poker'
 
 describe Poker do
   it "should have a VERSION constant" do
