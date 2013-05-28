@@ -28,5 +28,7 @@ module Poker
     def to_s
       "#{value}#{suit}"
     end
+    
+    alias :inspect :to_s
   end
 end

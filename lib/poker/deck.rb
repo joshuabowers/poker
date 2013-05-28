@@ -3,26 +3,32 @@ module Poker
     attr_reader :cards, :dealt
     
     # Ideally, this would take the number of decks to create as one of the initilization arguments.
-    def initialize(args)
+    def initialize(*args)
       reset
     end
     
     # Creates a new set of cards, ordered based on suit and face value
     def reset
-      @cards = Card.suits.map do |suit|
+      @cards = Card.suits.keys.map do |suit|
         Card.values.map {|i| Card.new(suit, i)}
-      end
+      end.flatten
       @dealt = []
+      self
     end
     
     # Randomly orders the deck
     def shuffle
-      @cards.sort {|a,b| rand(3) - 1}
+      @cards.shuffle!
+      self
     end
     
     def deal
       reset and shuffle if @cards.empty?
       @cards.pop.tap {|c| @dealt << c}
+    end
+    
+    def inspect
+      "Deck: #{@dealt.count} / #{@cards.count} (dealt / remain)"
     end
   end
 end
