@@ -7,7 +7,7 @@ module Poker
     self.suits = {hearts: :"\u2661", diamonds: :"\u2662", spades: :"\u2660", clubs: :"\u2663"}
     self.values = Set.new((2..10).to_a + %i{J Q K A})
     
-    attr_accessor :suit, :value
+    attr_reader :suit, :value
     
     def suit=(s)
       @suit = self.class.suits[s] || s

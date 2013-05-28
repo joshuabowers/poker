@@ -24,3 +24,20 @@ describe Card do
   its(:values) { should_not be_empty }
   its(:values) { should be_a(Set) }
 end
+
+shared_examples_for "a card instance" do |suit, value|
+  it { should respond_to(:suit) }
+  it { should respond_to(:value) }
+  its(:suit) { should == Card.suits[suit] }
+  its(:value) { should == value }
+end
+
+describe "A card created with two parameters" do
+  subject { Card.new(:hearts, 9) }
+  it_behaves_like "a card instance", :hearts, 9
+end
+
+describe "A card created with a hash" do
+  subject { Card.new(suit: :hearts, value: 9) }
+  it_behaves_like "a card instance", :hearts, 9
+end
